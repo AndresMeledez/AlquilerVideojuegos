@@ -1,0 +1,100 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="Proy01.SiteMaster" %>
+
+<!DOCTYPE html>
+<html lang="es">
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%: Page.Title %> - NextGen Rentals</title>
+
+    <asp:PlaceHolder runat="server">
+        <%: Scripts.Render("~/bundles/modernizr") %>
+    </asp:PlaceHolder>
+
+    <webopt:bundlereference runat="server" path="~/Content/css" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" runat="server" />
+    <link href="~/Content/Site.css" rel="stylesheet" runat="server" />
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+</head>
+<body>
+    <form id="formPrincipal" runat="server">
+        <asp:ScriptManager runat="server">
+            <Scripts>
+                <%--Framework Scripts--%>
+                <asp:ScriptReference Name="MsAjaxBundle" />
+                <asp:ScriptReference Name="jquery" />
+                <asp:ScriptReference Name="WebForms.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebForms.js" />
+                <asp:ScriptReference Name="WebUIValidation.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebUIValidation.js" />
+                <asp:ScriptReference Name="MenuStandards.js" Assembly="System.Web" Path="~/Scripts/WebForms/MenuStandards.js" />
+                <asp:ScriptReference Name="GridView.js" Assembly="System.Web" Path="~/Scripts/WebForms/GridView.js" />
+                <asp:ScriptReference Name="DetailsView.js" Assembly="System.Web" Path="~/Scripts/WebForms/DetailsView.js" />
+                <asp:ScriptReference Name="TreeView.js" Assembly="System.Web" Path="~/Scripts/WebForms/TreeView.js" />
+                <asp:ScriptReference Name="WebParts.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebParts.js" />
+                <asp:ScriptReference Name="Focus.js" Assembly="System.Web" Path="~/Scripts/WebForms/Focus.js" />
+                <asp:ScriptReference Name="WebFormsBundle" />
+                <%--Site Scripts--%>
+            </Scripts>
+        </asp:ScriptManager>
+
+        <nav class="navbar navbar-expand-lg navbar-dark gv-navbar">
+            <div class="container-fluid">
+                <a class="navbar-brand gv-logo" runat="server" href="~/">
+                    NextGen Rentals
+                </a>
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#gvMenu"
+                    aria-controls="gvMenu" aria-expanded="false" aria-label="Mostrar menu">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="gvMenu">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <asp:PlaceHolder ID="phMenuJugador" runat="server">
+                            <li class="nav-item">
+                                <a class="nav-link" runat="server" href="~/Pages/Alquiler/MisAlquileres.aspx">Mis alquileres</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" runat="server" href="~/Pages/Videojuegos/VerVideojuegos.aspx">Ver videojuegos</a>
+                            </li>
+                        </asp:PlaceHolder>
+                        <asp:PlaceHolder ID="phMenuAdministrador" runat="server">
+                            <li class="nav-item">
+                                <a class="nav-link" runat="server" href="~/Pages/Alquiler/GestionarAlquileres.aspx">Gestionar alquileres</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" runat="server" href="~/Pages/Videojuegos/ListaVideojuegos.aspx">Gestionar videojuegos</a>
+                            </li>
+                        </asp:PlaceHolder>
+                    </ul>
+                    <ul class="navbar-nav align-items-lg-center">
+                        <li class="nav-item me-lg-3 gv-usuario">
+                            Hola, <asp:Label ID="lblNombreJugador" runat="server" Font-Bold="true" />
+                        </li>
+                        <li class="nav-item">
+                            <asp:LinkButton ID="btnCerrarSesion" runat="server" CssClass="btn gv-btn-navbar btn-sm" Visible="false"
+                                OnClientClick="return confirm('¿Desea cerrar la sesión?');" OnClick="btnCerrarSesion_Click">Cerrar sesión</asp:LinkButton>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <header class="gv-titulo-seccion">
+            <div class="container">
+                <h2><%: Page.Title %></h2>
+            </div>
+        </header>
+
+        <main class="container gv-contenido">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server"></asp:ContentPlaceHolder>
+        </main>
+
+        <footer class="gv-footer">
+            <div class="container text-center">
+                <p class="mb-0">&copy; <%: DateTime.Now.Year %> NextGen Rentals — Sistema de Renta de Videojuegos</p>
+            </div>
+        </footer>
+    </form>
+    <asp:PlaceHolder runat="server">
+        <%: Scripts.Render("~/Scripts/bootstrap.bundle.min.js") %>
+    </asp:PlaceHolder>
+</body>
+</html>

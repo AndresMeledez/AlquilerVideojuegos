@@ -1,0 +1,208 @@
+/* ============================================================
+   NextGen Rentals - Sistema de Renta de Videojuegos
+   Paleta y estilo inspirados en Steam.
+   ============================================================ */
+
+:root {
+    --gv-fondo: #1b2838;
+    --gv-fondo-claro: #2a475e;
+    --gv-panel: #16202d;
+    --gv-acento: #66c0f4;
+    --gv-acento-oscuro: #1999ff;
+    --gv-texto: #c7d5e0;
+    --gv-texto-claro: #ffffff;
+}
+
+body {
+    background-color: var(--gv-fondo);
+    color: var(--gv-texto);
+    font-family: "Segoe UI", Arial, sans-serif;
+}
+
+a {
+    color: var(--gv-acento);
+}
+
+/* Barra de navegacion */
+.gv-navbar {
+    background: linear-gradient(90deg, #171a21 0%, #1b2838 60%, #2a475e 100%);
+    border-bottom: 2px solid var(--gv-acento-oscuro);
+}
+
+.gv-logo {
+    color: var(--gv-texto-claro) !important;
+    font-weight: 700;
+    font-size: 1.4rem;
+    letter-spacing: .5px;
+}
+
+.gv-usuario {
+    color: var(--gv-texto);
+}
+
+/* Titulo de seccion */
+.gv-titulo-seccion {
+    background-color: var(--gv-panel);
+    border-bottom: 1px solid var(--gv-fondo-claro);
+    padding: 14px 0;
+    margin-bottom: 20px;
+}
+
+.gv-titulo-seccion h2 {
+    color: var(--gv-texto-claro);
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+/* Contenido */
+.gv-contenido {
+    padding-bottom: 60px;
+}
+
+/* Botones */
+.gv-btn-primario {
+    background-color: var(--gv-acento-oscuro);
+    border-color: var(--gv-acento-oscuro);
+    color: #ffffff;
+}
+
+.gv-btn-primario:hover {
+    background-color: var(--gv-acento);
+    border-color: var(--gv-acento);
+    color: #0a0e14;
+}
+
+.gv-btn-secundario {
+    background-color: var(--gv-fondo-claro);
+    border-color: var(--gv-fondo-claro);
+    color: #ffffff;
+}
+
+.gv-btn-secundario:hover {
+    background-color: var(--gv-acento);
+    border-color: var(--gv-acento);
+    color: #0a0e14;
+}
+
+.gv-btn-navbar {
+    background-color: #000000;
+    border-color: #000000;
+    color: #ffffff;
+}
+
+.gv-btn-navbar:hover {
+    background-color: #222222;
+    border-color: #222222;
+    color: #ffffff;
+}
+
+/* Paneles / formularios / comprobantes */
+.gv-panel-filtro,
+.gv-formulario,
+.gv-comprobante {
+    background-color: var(--gv-panel);
+    border: 1px solid var(--gv-fondo-claro);
+    border-radius: 6px;
+    padding: 20px;
+}
+
+.gv-comprobante-titulo {
+    color: var(--gv-texto-claro);
+}
+
+.gv-acciones {
+    border-top: 1px solid var(--gv-fondo-claro);
+    padding-top: 16px;
+}
+
+/* Tablas */
+.gv-tabla {
+    background-color: var(--gv-panel);
+}
+
+.gv-tabla th {
+    background-color: var(--gv-fondo-claro);
+    color: var(--gv-texto-claro);
+}
+
+/* Formularios */
+.form-label {
+    color: var(--gv-texto);
+}
+
+.form-control,
+.form-select {
+    background-color: #0f1621;
+    color: var(--gv-texto-claro);
+    border: 1px solid var(--gv-fondo-claro);
+}
+
+.form-control:focus,
+.form-select:focus {
+    background-color: #0f1621;
+    color: var(--gv-texto-claro);
+    border-color: var(--gv-acento);
+    box-shadow: 0 0 0 .2rem rgba(102, 192, 244, .25);
+}
+
+/* Pie de pagina */
+.gv-footer {
+    background-color: #0f1621;
+    color: var(--gv-texto);
+    padding: 16px 0;
+    margin-top: 30px;
+}
+
+/* Login */
+.gv-login-body {
+    background: radial-gradient(circle at top, #2a475e 0%, #171a21 70%);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+}
+
+.gv-login-contenedor {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 40px 15px;
+}
+
+.gv-login-caja {
+    background-color: var(--gv-panel);
+    border: 1px solid var(--gv-fondo-claro);
+    border-radius: 8px;
+    padding: 32px;
+    width: 100%;
+    max-width: 380px;
+    color: var(--gv-texto);
+}
+
+.gv-login-marca {
+    color: var(--gv-texto-claro);
+    text-align: center;
+    font-size: 1.8rem;
+    margin-bottom: 0;
+}
+
+.gv-login-subtitulo {
+    text-align: center;
+    color: var(--gv-texto);
+    margin-bottom: 24px;
+    font-size: .9rem;
+}
+
+/* Ajustes generales heredados de la plantilla base */
+.body-content {
+    margin-top: 15px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+@media screen and (min-width: 768px) {
+    .body-content {
+        padding: 0;
+    }
+}
